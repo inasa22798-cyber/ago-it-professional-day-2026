@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,6 +72,7 @@ header {
 .logo {
     height: 65px;
     width: auto;
+    display: block;
 }
 
 nav a {
@@ -116,9 +118,7 @@ nav a:hover {
 
 section {
     max-width: 1150px;
-
     margin: auto;
-
     padding: 95px 25px;
 }
 
@@ -330,7 +330,7 @@ section h2 {
 }
 
 
-/* shield watermark */
+/* Shield watermark */
 
 .person::after {
     content: "S";
@@ -415,7 +415,7 @@ section h2 {
 
 
 /* =========================================================
-   EMPTY HERO WORK SECTION
+   HERO WORK SECTION
 ========================================================= */
 
 .hero-work {
@@ -854,6 +854,8 @@ section h2 {
     z-index: 3000;
 
     padding: 20px;
+
+    overflow-y: auto;
 }
 
 .popup.active {
@@ -867,11 +869,15 @@ section h2 {
 
     max-width: 650px;
 
+    max-height: 90vh;
+
+    overflow-y: auto;
+
     background: white;
 
-    border-radius: 15px;
+    border-radius: 18px;
 
-    padding: 55px 40px;
+    padding: 55px 40px 40px;
 
     text-align: center;
 
@@ -887,7 +893,7 @@ section h2 {
 
     from {
         opacity: 0;
-        transform: scale(0.75) translateY(30px);
+        transform: scale(0.85) translateY(25px);
     }
 
     to {
@@ -933,7 +939,11 @@ section h2 {
 
     font-size: 34px;
 
-    margin-bottom: 20px;
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+
+    overflow-wrap: anywhere;
 }
 
 .popup-content p {
@@ -941,7 +951,11 @@ section h2 {
 
     font-size: 18px;
 
-    line-height: 1.8;
+    line-height: 1.75;
+
+    margin: 0 auto;
+
+    max-width: 540px;
 }
 
 .popup-footer {
@@ -950,24 +964,45 @@ section h2 {
     color: var(--red);
 
     font-weight: 900;
+
+    font-size: 15px;
 }
 
 .close {
     position: absolute;
 
-    right: 20px;
+    right: 16px;
 
-    top: 13px;
+    top: 10px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     font-size: 30px;
+
+    line-height: 1;
 
     color: #7b8794;
 
     cursor: pointer;
+
+    border-radius: 50%;
+
+    transition: 0.2s;
+
+    z-index: 10;
 }
 
 .close:hover {
     color: var(--red);
+
+    background: #f4f7fa;
 }
 
 
@@ -1018,38 +1053,259 @@ footer strong {
 
 @media (max-width: 550px) {
 
-    .team {
-        grid-template-columns: 1fr;
-    }
+    /* Header */
 
     header {
         justify-content: center;
+
+        padding: 10px 15px;
     }
 
-    section {
-        padding: 70px 20px;
+    .logo {
+        height: 55px;
     }
+
+
+    /* Sections */
+
+    section {
+        padding: 65px 20px;
+    }
+
+    section h2 {
+        font-size: 34px;
+
+        line-height: 1.2;
+    }
+
+
+    /* Appreciation */
 
     .appreciation-message {
         padding: 30px 22px;
+
+        border-left-width: 5px;
     }
 
+    .appreciation-message p {
+        font-size: 16px;
+
+        line-height: 1.75;
+    }
+
+
+    /* Team */
+
+    .team-inner {
+        padding: 0 20px;
+    }
+
+    .team {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .person {
+        padding: 30px 22px;
+    }
+
+    .person h3 {
+        font-size: 18px;
+    }
+
+    .avatar {
+        width: 105px;
+        height: 105px;
+    }
+
+
+    /* Question */
+
     .question-card {
-        padding: 45px 20px;
+        padding: 42px 18px;
+    }
+
+    .question-card h3 {
+        font-size: 31px;
+
+        line-height: 1.15;
+    }
+
+    .question-card p {
+        font-size: 15px;
+
+        margin-bottom: 30px;
     }
 
     .buttons {
-        gap: 15px;
+        gap: 12px;
+
+        min-height: 100px;
     }
 
     .yes-btn,
     .no-btn {
-        padding: 14px 25px;
-        font-size: 15px;
+        padding: 13px 23px;
+
+        font-size: 14px;
+    }
+
+    .answer {
+        font-size: 17px;
+
+        line-height: 1.5;
+    }
+
+
+    /* Random message */
+
+    .message-box {
+        padding: 45px 20px;
+    }
+
+    .message-box h3 {
+        font-size: 26px;
+    }
+
+    #message {
+        font-size: 17px;
+
+        line-height: 1.55;
+
+        min-height: 95px;
+    }
+
+    .message-button {
+        font-size: 14px;
+
+        padding: 13px 20px;
+    }
+
+
+    /* =====================================================
+       MOBILE POPUP
+    ===================================================== */
+
+    .popup {
+        padding: 15px;
+
+        align-items: center;
     }
 
     .popup-content {
-        padding: 50px 25px;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        max-height: 85vh;
+
+        padding: 48px 24px 30px;
+
+        border-top-width: 7px;
+
+        border-radius: 16px;
+
+        box-shadow:
+            0 20px 60px rgba(0,0,0,0.30);
+    }
+
+    .popup-shield {
+
+        width: 62px;
+        height: 54px;
+
+        margin-bottom: 16px;
+    }
+
+    .popup-shield span {
+
+        font-size: 34px;
+    }
+
+    .popup-content h2 {
+
+        font-size: 25px;
+
+        line-height: 1.25;
+
+        margin-bottom: 15px;
+    }
+
+    .popup-content p {
+
+        font-size: 16px;
+
+        line-height: 1.65;
+    }
+
+    .popup-footer {
+
+        margin-top: 20px;
+
+        font-size: 14px;
+    }
+
+    .close {
+
+        right: 10px;
+
+        top: 8px;
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 28px;
+    }
+
+
+    /* Thank you */
+
+    .thank-you {
+        padding-top: 80px;
+
+        padding-bottom: 80px;
+    }
+
+    .thank-you h2 {
+        font-size: 45px;
+    }
+
+    .thank-you p {
+        font-size: 16px;
+
+        line-height: 1.75;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .popup {
+        padding: 10px;
+    }
+
+    .popup-content {
+        padding: 45px 18px 25px;
+    }
+
+    .popup-content h2 {
+        font-size: 23px;
+    }
+
+    .popup-content p {
+        font-size: 15px;
+    }
+
+    .yes-btn,
+    .no-btn {
+        padding: 12px 18px;
     }
 
 }
@@ -1194,7 +1450,7 @@ footer strong {
                 </h3>
 
                 <div class="role">
-                    Director<br>
+                    Director
                 </div>
 
                 <button
@@ -1406,8 +1662,6 @@ footer strong {
 
             <div class="buttons">
 
-                <!-- YES RUNS AWAY -->
-
                 <button
                     class="yes-btn"
                     id="yesButton"
@@ -1415,8 +1669,6 @@ footer strong {
                     YES
                 </button>
 
-
-                <!-- NO STAYS -->
 
                 <button
                     class="no-btn"
@@ -1490,6 +1742,7 @@ footer strong {
     id="thanks"
 >
 
+    <div class="label">
         FROM EVERYONE AT AGO
     </div>
 
@@ -1545,29 +1798,47 @@ footer strong {
 
     <div class="popup-content">
 
+        <!-- CLOSE BUTTON -->
 
         <div
             class="close"
             onclick="closePopup()"
+            aria-label="Close"
         >
             ×
+        </div>
 
 
+        <!-- SHIELD -->
+
+        <div class="popup-shield">
+
+            <span>
+                S
+            </span>
+
+        </div>
+
+
+        <!-- STAFF NAME -->
 
         <h2 id="popupName">
             IT Hero
         </h2>
 
 
+        <!-- STAFF MESSAGE -->
+
         <p id="popupMessage">
             Thank you for everything you do.
         </p>
 
 
+        <!-- FOOTER -->
+
         <div class="popup-footer">
             AGO appreciates you.
         </div>
-
 
     </div>
 
@@ -1609,17 +1880,8 @@ footer strong {
 const yesButton =
     document.getElementById("yesButton");
 
-const buttonsContainer =
-    document.querySelector(".buttons");
-
 
 function moveYesButton() {
-
-    /*
-       Keep YES inside its own general area.
-       Because YES is position: relative,
-       it remains side-by-side with NO.
-    */
 
     const randomX =
         (Math.random() * 70) - 35;
@@ -1700,6 +1962,11 @@ function showAppreciation(
         .getElementById("popup")
         .classList.add("active");
 
+
+    /* Prevent background scrolling */
+
+    document.body.style.overflow = "hidden";
+
 }
 
 
@@ -1712,6 +1979,11 @@ function closePopup() {
     document
         .getElementById("popup")
         .classList.remove("active");
+
+
+    /* Restore background scrolling */
+
+    document.body.style.overflow = "";
 
 }
 
@@ -1736,6 +2008,26 @@ document
 
         }
     );
+
+
+/* =====================================================
+   ESCAPE KEY CLOSES POPUP
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closePopup();
+
+        }
+
+    }
+);
 
 
 /* =====================================================
@@ -1802,3 +2094,4 @@ function generateMessage() {
 
 </body>
 </html>
+```
