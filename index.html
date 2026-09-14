@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AGORC | IT Professional Day 2026</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #ffffff;
+    color: #173f6b;
+}
+
+
+/* =========================================================
+   COLOUR PALETTE
+========================================================= */
+
+:root {
+    --blue: #0057b8;
+    --dark-blue: #073b78;
+    --red: #e31b23;
+    --dark-red: #b5121b;
+    --yellow: #ffc72c;
+    --light-blue: #edf6ff;
+    --text: #173f6b;
+    --muted: #68788a;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    background: white;
+    padding: 13px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 4px solid var(--red);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow:
+        0 3px 20px rgba(0,0,0,0.08);
+}
+
+.logo {
+    height: 65px;
+    width: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-blue);
+
+    margin-left: 28px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+nav a:hover {
+    color: var(--red);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero {
+    width: 100%;
+    background: #ffffff;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+section {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 95px 25px;
+}
+
+.label {
+    color: var(--red);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+section h2 {
+    font-size: 43px;
+
+    margin-bottom: 20px;
+
+    color: var(--dark-blue);
+
+    font-weight: 850;
+}
+
+.intro {
+    max-width: 780px;
+
+    color: var(--muted);
+
+    line-height: 1.85;
+
+    margin-bottom: 50px;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   APPRECIATION INTRO
+========================================================= */
+
+.appreciation-intro {
+    background: white;
+    text-align: left;
+}
+
+.appreciation-message {
+    background:
+        linear-gradient(
+            135deg,
+            #f8fbff,
+            #edf5ff
+        );
+
+    border-left: 7px solid var(--red);
+
+    border-radius: 12px;
+
+    padding: 45px;
+
+    box-shadow:
+        0 8px 35px rgba(0,50,100,0.07);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.appreciation-message::after {
+    content: "S";
+
+    position: absolute;
+
+    right: 30px;
+    bottom: -65px;
+
+    font-size: 220px;
+
+    font-weight: 900;
+
+    color: var(--blue);
+
+    opacity: 0.035;
+}
+
+.appreciation-message p {
+    position: relative;
+
+    z-index: 2;
+
+    color: #42556a;
+
+    line-height: 1.85;
+
+    font-size: 18px;
+}
+
+.appreciation-message strong {
+    color: var(--red);
+}
+
+
+/* =========================================================
+   TEAM
+========================================================= */
+
+.team-section {
+    max-width: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f3f8fd,
+            #ffffff
+        );
+}
+
+.team-inner {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 0 25px;
+}
+
+.team {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   STAFF CARD
+========================================================= */
+
+.person {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 32px 25px;
+
+    border: 1px solid #dce5ee;
+
+    transition: 0.35s;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 25px rgba(0,50,100,0.06);
+}
+
+.person::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--red),
+            var(--yellow),
+            var(--blue)
+        );
+}
+
+.person:hover {
+    transform: translateY(-9px);
+
+    box-shadow:
+        0 18px 40px rgba(0,55,110,0.14);
+}
+
+
+/* =========================================================
+   STAFF PHOTO
+========================================================= */
+
+.avatar {
+    width: 115px;
+    height: 115px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    display: block;
+
+    margin-bottom: 22px;
+
+    border: 5px solid white;
+
+    outline: 4px solid var(--blue);
+
+    background: #edf4fa;
+}
+
+
+/* shield watermark */
+
+.person::after {
+    content: "S";
+
+    position: absolute;
+
+    right: -15px;
+    top: 15px;
+
+    font-size: 105px;
+
+    font-weight: 900;
+
+    color: var(--red);
+
+    opacity: 0.035;
+}
+
+.person h3 {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 19px;
+
+    color: var(--dark-blue);
+
+    margin-bottom: 8px;
+}
+
+.role {
+    position: relative;
+
+    z-index: 2;
+
+    color: var(--red);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   APPRECIATE BUTTON
+========================================================= */
+
+.appreciate-btn {
+    margin-top: 25px;
+
+    padding: 12px 22px;
+
+    border: none;
+
+    background: var(--blue);
+
+    color: white;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+.appreciate-btn:hover {
+    background: var(--red);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(227,27,35,0.2);
+}
+
+
+/* =========================================================
+   EMPTY HERO WORK SECTION
+========================================================= */
+
+.hero-work {
+    background: white;
+}
+
+
+/* =========================================================
+   FUN QUESTION
+========================================================= */
+
+.question-section {
+    max-width: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #063b78,
+            #0057b8
+        );
+
+    color: white;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.question-section::before {
+    content: "S";
+
+    position: absolute;
+
+    font-size: 500px;
+
+    font-weight: 900;
+
+    right: -100px;
+    bottom: -180px;
+
+    color: white;
+
+    opacity: 0.035;
+}
+
+.question-inner {
+    max-width: 950px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.question-section .label {
+    color: var(--yellow);
+}
+
+.question-section h2 {
+    color: white;
+
+    font-size: clamp(40px, 6vw, 65px);
+
+    margin-bottom: 15px;
+}
+
+.question-subtitle {
+    color: #d9eaff;
+
+    font-size: 18px;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   QUESTION CARD
+========================================================= */
+
+.question-card {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 55px 30px;
+
+    color: var(--dark-blue);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.22);
+}
+
+.question-card h3 {
+    font-size: clamp(28px, 5vw, 50px);
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+
+    color: var(--red);
+}
+
+.question-card p {
+    color: var(--muted);
+
+    font-size: 17px;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   BUTTON AREA
+========================================================= */
+
+.buttons {
+    min-height: 110px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   YES BUTTON
+========================================================= */
+
+.yes-btn {
+    position: relative;
+
+    flex: 0 0 auto;
+
+    padding: 15px 35px;
+
+    background: var(--red);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-weight: 800;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(227,27,35,0.25);
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   NO BUTTON
+========================================================= */
+
+.no-btn {
+    position: relative;
+
+    flex: 0 0 auto;
+
+    padding: 15px 35px;
+
+    background: var(--blue);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-weight: 800;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(0,87,184,0.25);
+
+    transition: 0.25s;
+}
+
+.no-btn:hover {
+    background: var(--dark-blue);
+}
+
+
+/* =========================================================
+   ANSWER
+========================================================= */
+
+.answer {
+    display: none;
+
+    margin-top: 25px;
+
+    color: var(--red);
+
+    font-size: 21px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   RANDOM APPRECIATION
+========================================================= */
+
+.message-section {
+    text-align: center;
+
+    background: #ffffff;
+}
+
+.message-box {
+    background:
+        linear-gradient(
+            135deg,
+            #073b78,
+            #0057b8
+        );
+
+    border-radius: 15px;
+
+    padding: 65px 30px;
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0,50,100,0.15);
+}
+
+.message-box::after {
+    content: "S";
+
+    position: absolute;
+
+    right: -30px;
+    bottom: -130px;
+
+    font-size: 400px;
+
+    font-weight: 900;
+
+    color: white;
+
+    opacity: 0.035;
+}
+
+.message-box h3 {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+#message {
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    max-width: 800px;
+
+    margin: 20px auto;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    color: #dceeff;
+
+    transition: opacity 0.2s;
+}
+
+.message-button {
+    position: relative;
+
+    z-index: 2;
+
+    border: 2px solid var(--yellow);
+
+    background: var(--red);
+
+    color: white;
+
+    padding: 14px 27px;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.message-button:hover {
+    background: var(--dark-red);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   FINAL THANK YOU
+========================================================= */
+
+.thank-you {
+    text-align: center;
+
+    padding-top: 120px;
+
+    padding-bottom: 120px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f6faff,
+            #ffffff
+        );
+}
+
+.final-shield {
+    width: 100px;
+    height: 85px;
+
+    margin: auto;
+
+    background: var(--red);
+
+    clip-path: polygon(
+        5% 0,
+        95% 0,
+        82% 68%,
+        50% 100%,
+        18% 68%
+    );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.final-shield span {
+    color: var(--yellow);
+
+    font-size: 55px;
+
+    font-weight: 900;
+}
+
+.thank-you h2 {
+    font-size: clamp(42px, 7vw, 70px);
+
+    color: var(--dark-blue);
+
+    margin: 25px 0;
+}
+
+.thank-you p {
+    max-width: 780px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+.signature {
+    margin-top: 35px;
+
+    color: var(--blue);
+
+    font-weight: 600;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   POPUP
+========================================================= */
+
+.popup {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,20,45,0.78);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 3000;
+
+    padding: 20px;
+}
+
+.popup.active {
+    display: flex;
+}
+
+.popup-content {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 55px 40px;
+
+    text-align: center;
+
+    border-top: 9px solid var(--red);
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,0.35);
+
+    animation: popupIn 0.35s ease;
+}
+
+@keyframes popupIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.75) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+.popup-shield {
+    width: 75px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    background: var(--red);
+
+    clip-path: polygon(
+        5% 0,
+        95% 0,
+        82% 68%,
+        50% 100%,
+        18% 68%
+    );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.popup-shield span {
+    color: var(--yellow);
+
+    font-size: 40px;
+
+    font-weight: 900;
+}
+
+.popup-content h2 {
+    color: var(--blue);
+
+    font-size: 34px;
+
+    margin-bottom: 20px;
+}
+
+.popup-content p {
+    color: #42556a;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+.popup-footer {
+    margin-top: 25px;
+
+    color: var(--red);
+
+    font-weight: 900;
+}
+
+.close {
+    position: absolute;
+
+    right: 20px;
+
+    top: 13px;
+
+    font-size: 30px;
+
+    color: #7b8794;
+
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--red);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #052d59;
+
+    color: #bcd1e5;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    font-size: 13px;
+
+    border-top: 5px solid var(--red);
+}
+
+footer strong {
+    color: white;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .team {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    nav {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 550px) {
+
+    .team {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    section {
+        padding: 70px 20px;
+    }
+
+    .appreciation-message {
+        padding: 30px 22px;
+    }
+
+    .question-card {
+        padding: 45px 20px;
+    }
+
+    .buttons {
+        gap: 15px;
+    }
+
+    .yes-btn,
+    .no-btn {
+        padding: 14px 25px;
+        font-size: 15px;
+    }
+
+    .popup-content {
+        padding: 50px 25px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header>
+
+    <img
+        src="agorc-logo.png"
+        class="logo"
+        alt="AGORC Logo"
+    >
+
+    <nav>
+
+        <a href="#team">
+            IT TEAM
+        </a>
+
+        <a href="#appreciation">
+            APPRECIATION
+        </a>
+
+        <a href="#question">
+            IT REALITY
+        </a>
+
+        <a href="#thanks">
+            THANK YOU
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO IMAGE
+====================================================== -->
+
+<div class="hero">
+
+    <img
+        src="hero-it-day.png"
+        alt="Happy IT Professional Day"
+    >
+
+</div>
+
+
+<!-- =====================================================
+     APPRECIATION
+====================================================== -->
+
+<section
+    class="appreciation-intro"
+    id="appreciation"
+>
+
+    <h2>
+        Message from AGORC EXCOM
+    </h2>
+
+    <div class="appreciation-message">
+
+        <p>
+
+            <strong>
+                Happy IT Professionals Day to the absolute heroes
+                keeping our entire operation running!
+            </strong>
+
+            <br><br>
+
+            Thank you for always saving the day and rescuing us
+            whenever tech chaos strikes. You literally keep our
+            entire team connected from North to Central to South,
+            ensuring everything stays perfectly secure, stable,
+            and easy to use.
+
+            <br><br>
+
+            Thank you for working so hard behind the scenes to
+            keep our digital world running smoothly across every
+            single region!
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     IT TEAM
+====================================================== -->
+
+<div
+    class="team-section"
+    id="team"
+>
+
+    <div class="team-inner">
+
+        <h2>
+            Meet Our IT Heroes
+        </h2>
+
+        <p class="intro">
+
+            Six people. Countless solutions.
+            One incredible team keeping AGO moving.
+
+        </p>
+
+
+        <div class="team">
+
+
+            <!-- ================= STAFF 1 ================= -->
+
+            <div class="person">
+
+                <img
+                    src="staff1.jpg"
+                    class="avatar"
+                    alt="Mohamed Nimal Thaufeeq"
+                >
+
+                <h3>
+                    Mohamed Nimal Thaufeeq
+                </h3>
+
+                <div class="role">
+                    Director<br>
+                </div>
+
+                <button
+                    class="appreciate-btn"
+                    onclick="showAppreciation(
+                        'Mohamed Nimal Thaufeeq',
+                        'Thank you for leading the ICT team and keeping the entire digital operation moving. Your leadership, guidance and commitment make a difference every day.'
+                    )"
+                >
+                    APPRECIATE
+                </button>
+
+            </div>
+
+
+            <!-- ================= STAFF 2 ================= -->
+
+            <div class="person">
+
+                <img
+                    src="staff2.jpg"
+                    class="avatar"
+                    alt="Ahmed Ismaah Abdulla"
+                >
+
+                <h3>
+                    Ahmed Ismaah Abdulla
+                </h3>
+
+                <div class="role">
+                    Solution Developer
+                </div>
+
+                <button
+                    class="appreciate-btn"
+                    onclick="showAppreciation(
+                        'Ahmed Ismaah Abdulla',
+                        'Thank you for turning ideas into solutions and helping make our work easier through technology. Your development work and dedication are truly appreciated.'
+                    )"
+                >
+                    APPRECIATE
+                </button>
+
+            </div>
+
+
+            <!-- ================= STAFF 3 ================= -->
+
+            <div class="person">
+
+                <img
+                    src="staff3.jpg"
+                    class="avatar"
+                    alt="Ibrahim Siraj"
+                >
+
+                <h3>
+                    Ibrahim Siraj
+                </h3>
+
+                <div class="role">
+                    IT System Engineer
+                </div>
+
+                <button
+                    class="appreciate-btn"
+                    onclick="showAppreciation(
+                        'Ibrahim Siraj',
+                        'Thank you for keeping our systems stable, reliable and running when we need them most. Your technical expertise keeps everything moving.'
+                    )"
+                >
+                    APPRECIATE
+                </button>
+
+            </div>
+
+
+            <!-- ================= STAFF 4 ================= -->
+
+            <div class="person">
+
+                <img
+                    src="staff4.jpg"
+                    class="avatar"
+                    alt="Aishath Nahidha"
+                >
+
+                <h3>
+                    Aishath Nahidha
+                </h3>
+
+                <div class="role">
+                    Solution Developer
+                </div>
+
+                <button
+                    class="appreciate-btn"
+                    onclick="showAppreciation(
+                        'Aishath Nahidha',
+                        'Thank you for creating solutions that make our work better and easier. Your technical skills, patience and dedication are greatly appreciated.'
+                    )"
+                >
+                    APPRECIATE
+                </button>
+
+            </div>
+
+
+            <!-- ================= STAFF 5 ================= -->
+
+            <div class="person">
+
+                <img
+                    src="staff5.jpg"
+                    class="avatar"
+                    alt="Rifath Abdul Razzag"
+                >
+
+                <h3>
+                    Rifath Abdul Razzag
+                </h3>
+
+                <div class="role">
+                    Solution Developer
+                </div>
+
+                <button
+                    class="appreciate-btn"
+                    onclick="showAppreciation(
+                        'Rifath Abdul Razzag',
+                        'Thank you for solving problems, building solutions and helping keep our digital workplace running smoothly. Your contribution does not go unnoticed.'
+                    )"
+                >
+                    APPRECIATE
+                </button>
+
+            </div>
+
+
+            <!-- ================= STAFF 6 ================= -->
+
+            <div class="person">
+
+                <img
+                    src="staff6.jpg"
+                    class="avatar"
+                    alt="Mohamed Zamin"
+                >
+
+                <h3>
+                    Mohamed Zamin
+                </h3>
+
+                <div class="role">
+                    IT Support Technician
+                </div>
+
+                <button
+                    class="appreciate-btn"
+                    onclick="showAppreciation(
+                        'Mohamed Zamin',
+                        'Thank you for being there when people need technical support. Your patience, problem-solving and dedication help keep everyone moving.'
+                    )"
+                >
+                    APPRECIATE
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FUN QUESTION
+====================================================== -->
+
+<div
+    class="question-section"
+    id="question"
+>
+
+    <div class="question-inner">
+
+        <h2>
+            Be Honest.
+        </h2>
+
+        <div class="question-subtitle">
+            We deserve an honest answer.
+        </div>
+
+
+        <div class="question-card">
+
+            <h3>
+                Do we ask you<br>
+                silly questions?
+            </h3>
+
+            <p>
+                We promise not to judge your answer.
+            </p>
+
+
+            <div class="buttons">
+
+                <!-- YES RUNS AWAY -->
+
+                <button
+                    class="yes-btn"
+                    id="yesButton"
+                >
+                    YES
+                </button>
+
+
+                <!-- NO STAYS -->
+
+                <button
+                    class="no-btn"
+                    onclick="noAnswer()"
+                >
+                    NO
+                </button>
+
+            </div>
+
+
+            <div
+                class="answer"
+                id="answer"
+            >
+                We knew it. Thank you for putting up with us.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     RANDOM APPRECIATION
+====================================================== -->
+
+<section class="message-section">
+
+    <div class="label">
+        // A LITTLE EXTRA APPRECIATION
+    </div>
+
+    <h2>
+        One more thing...
+    </h2>
+
+
+    <div class="message-box">
+
+        <h3>
+            A message for our IT heroes
+        </h3>
+
+
+        <div id="message">
+            Your appreciation is loading...
+        </div>
+
+
+        <button
+            class="message-button"
+            onclick="generateMessage()"
+        >
+            SHOW APPRECIATION
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL THANK YOU
+====================================================== -->
+
+<section
+    class="thank-you"
+    id="thanks"
+>
+
+    <div class="final-shield">
+
+        <span>
+            S
+        </span>
+
+    </div>
+
+
+    <div
+        class="label"
+        style="margin-top:30px;"
+    >
+        FROM EVERYONE AT AGO
+    </div>
+
+
+    <h2>
+        THANK YOU.
+    </h2>
+
+
+    <p>
+
+        Thank you for the countless problems you solve,
+        the systems you maintain, the questions you answer,
+        and the support you provide every day.
+
+        <br><br>
+
+        Your work may happen behind the scenes,
+        but its impact is seen across the entire
+        Auditor General's Office.
+
+        <br><br>
+
+        Today, AGO celebrates you.
+
+    </p>
+
+
+    <div class="signature">
+
+        With appreciation and gratitude,
+
+        <br><br>
+
+        <strong>
+            AGORC<br>
+            Auditor General's Office Recreation Club
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     APPRECIATION POPUP
+====================================================== -->
+
+<div
+    class="popup"
+    id="popup"
+>
+
+    <div class="popup-content">
+
+
+        <div
+            class="close"
+            onclick="closePopup()"
+        >
+            ×
+        </div>
+
+
+        <div class="popup-shield">
+
+            <span>
+                S
+            </span>
+
+        </div>
+
+
+        <h2 id="popupName">
+            IT Hero
+        </h2>
+
+
+        <p id="popupMessage">
+            Thank you for everything you do.
+        </p>
+
+
+        <div class="popup-footer">
+            AGO appreciates you.
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <strong>
+        AGORC
+    </strong>
+
+    <br>
+
+    Auditor General's Office Recreation Club
+
+    <br><br>
+
+    IT Professional Day 2026
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+/* =====================================================
+   RUNAWAY YES BUTTON
+===================================================== */
+
+const yesButton =
+    document.getElementById("yesButton");
+
+const buttonsContainer =
+    document.querySelector(".buttons");
+
+
+function moveYesButton() {
+
+    /*
+       Keep YES inside its own general area.
+       Because YES is position: relative,
+       it remains side-by-side with NO.
+    */
+
+    const randomX =
+        (Math.random() * 70) - 35;
+
+    const randomY =
+        (Math.random() * 50) - 25;
+
+
+    yesButton.style.transform =
+        `translate(${randomX}px, ${randomY}px)`;
+
+}
+
+
+/* Desktop */
+
+yesButton.addEventListener(
+    "mouseenter",
+    moveYesButton
+);
+
+
+/* If they somehow click it */
+
+yesButton.addEventListener(
+    "click",
+    moveYesButton
+);
+
+
+/* Mobile */
+
+yesButton.addEventListener(
+    "touchstart",
+    function(event) {
+
+        event.preventDefault();
+
+        moveYesButton();
+
+    }
+);
+
+
+/* =====================================================
+   NO BUTTON
+===================================================== */
+
+function noAnswer() {
+
+    document
+        .getElementById("answer")
+        .style.display = "block";
+
+}
+
+
+/* =====================================================
+   STAFF POPUP
+===================================================== */
+
+function showAppreciation(
+    name,
+    message
+) {
+
+    document
+        .getElementById("popupName")
+        .innerText = name;
+
+
+    document
+        .getElementById("popupMessage")
+        .innerText = message;
+
+
+    document
+        .getElementById("popup")
+        .classList.add("active");
+
+}
+
+
+/* =====================================================
+   CLOSE POPUP
+===================================================== */
+
+function closePopup() {
+
+    document
+        .getElementById("popup")
+        .classList.remove("active");
+
+}
+
+
+/* =====================================================
+   CLICK OUTSIDE POPUP
+===================================================== */
+
+document
+    .getElementById("popup")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+
+                closePopup();
+
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   RANDOM APPRECIATION
+===================================================== */
+
+const messages = [
+
+    "Thank you for keeping AGO connected and running.",
+
+    "Behind every smooth working day, there is an IT professional making it happen.",
+
+    "Thank you for solving problems that the rest of us do not even know how to explain.",
+
+    "Your work may happen behind the scenes, but your impact is everywhere.",
+
+    "Thank you for keeping our systems stable, secure and reliable.",
+
+    "To our IT team: your patience and dedication never go unnoticed.",
+
+    "Thank you for turning technology problems into solutions every day.",
+
+    "Six people. Countless solutions. One incredible IT team.",
+
+    "Thank you for being the people everyone turns to when technology decides not to cooperate.",
+
+    "Today, we celebrate the people who keep AGO moving forward."
+
+];
+
+
+function generateMessage() {
+
+    const box =
+        document.getElementById("message");
+
+
+    const random =
+        messages[
+            Math.floor(
+                Math.random() * messages.length
+            )
+        ];
+
+
+    box.style.opacity = "0";
+
+
+    setTimeout(
+        function() {
+
+            box.innerText = random;
+
+            box.style.opacity = "1";
+
+        },
+        200
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>
